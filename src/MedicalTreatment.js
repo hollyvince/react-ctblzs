@@ -1,20 +1,25 @@
+//React imported
 import React from "react";
 
+//MedicalTreatment component defined
+function MedicalTreatment(props){
 
-function MedicalTreatment(prop){
-
-function clickHandler () {
-  window.alert("Click from inside the MedicalTreatment comp")
+  // creates a function called toString containing the props of MedicalTreatment. Props are defined in App.js and are printed further down 'MedicalTreatment'
+  function toString(){ 
+    return "[ Treatment ID: " + props.treatId + "," +
+           " Treatment Course ID: " + props.treatCourseId + "," +
+           " Type: " + props.type + "," +
+           " Category: " + props.category + "," +
+           " Name: " + props.name + "," +
+           " Start Date: " + props.startDate + "]" ;
+  }  
   
-}
-
-  return(
-  <div>
-  {prop.treatId}
-    <button style = {{color:"green"}}
-    onClick = {clickHandler}>
-      Click here</button>
-  </div>
-  );
-  } 
+  // Prints the toString function containing the props 
+    return(
+    <div>
+     {toString(props)}
+    </div>
+  ); 
+  }
+  ;
 export default MedicalTreatment;
